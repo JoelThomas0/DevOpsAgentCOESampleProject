@@ -21,17 +21,20 @@ jobs:
 
             cd ~
 
-            # Clone repo if not exists, else pull latest
-            if [ -d "sample-node-project" ]; then
-              cd sample-node-project
+            # Clone or update repo
+            if [ -d "DevOpsAgentCOESampleProject" ]; then
+              cd DevOpsAgentCOESampleProject
               git pull
             else
               git clone https://github.com/JoelThomas0/DevOpsAgentCOESampleProject.git
-              cd sample-node-project
+              cd DevOpsAgentCOESampleProject
             fi
 
             # Stop old containers
             docker compose down || true
 
-            # Start new containers
+            # Build and run containers
             docker compose up --build -d
+
+            # Show running containers (for debugging)
+            docker ps
