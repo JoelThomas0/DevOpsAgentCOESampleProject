@@ -26,7 +26,7 @@ jobs:
               cd sample-node-project
               git pull
             else
-              git clone https://github.com/JoelThomas0/sample-node-project.git
+              git clone https://github.com/JoelThomas0/DevOpsAgentCOESampleProject.git
               cd sample-node-project
             fi
 
